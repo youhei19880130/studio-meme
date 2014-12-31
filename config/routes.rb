@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'info/index'
+
+  get 'access/index'
+
+  get 'schedule/index'
+
+  root to: 'top#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
