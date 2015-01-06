@@ -10,5 +10,27 @@
 
 <%= yield %>
 
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'studio-meme', '/', class: "navbar-brand" %>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'スケジュール', '/schedule/index', class: "btn btn-default btn-lg" %></li>
+            <li><%= link_to 'アクセス', '/access/index', class: "btn btn-default btn-lg" %></li>
+            <li><%= link_to 'お問い合わせ', '/info/index', class: "btn btn-default btn-lg" %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
 </body>
 </html>
