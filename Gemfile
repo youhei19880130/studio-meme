@@ -51,7 +51,7 @@ group :development, :test do
   gem 'spring'
 
   # use rspec for test
-  gem 'rspec-rails' 
+  gem 'rspec-rails'
 
 end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231045713) do
+ActiveRecord::Schema.define(version: 20150117090050) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,9 +46,35 @@ ActiveRecord::Schema.define(version: 20141231045713) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "schedules", force: true do |t|
+  create_table "genres", force: true do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.string   "name",        null: false
+    t.time     "start_time",  null: false
+    t.time     "finish_time", null: false
+    t.integer  "fee",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules_to_genres", force: true do |t|
+    t.integer "schedule_id", null: false
+    t.integer "genre_id",    null: false
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_to_schedules", force: true do |t|
+    t.integer "user_id",     null: false
+    t.integer "schedule_id", null: false
   end
 
 end
